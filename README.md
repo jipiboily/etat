@@ -6,6 +6,7 @@ Etat means "State" in French.
 
 [![Gem Version](https://badge.fury.io/rb/etat.png)](http://badge.fury.io/rb/etat)
 [![Build Status](https://travis-ci.org/jipiboily/etat.png?branch=master)](https://travis-ci.org/jipiboily/etat)
+[![Code Climate](https://codeclimate.com/github/jipiboily/etat.png)](https://codeclimate.com/github/jipiboily/etat)
 
 ## Installation
 
