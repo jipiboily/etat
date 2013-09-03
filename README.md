@@ -28,11 +28,12 @@ end
 ```
 
 Etat will generate a few methods and scopes that will help you:
-`MyModel.states` will give you an array of the states. # [:draft, :published, :deleted]
-`MyModel.all_published`: scope that will return all records with that state (and equivalents for each states).
-`MyModel.all_but_published`: scope that will return all records except the ones with that state (and equivalents for each states).
-`my_model_instance.state`: it will return the current state, as a symbol, always.
-`my_model_instance.published?`: boolean. Will tell you if current record has that state or not (and equivalents for each states).
+
+- `MyModel.states` will give you an array of the states. # [:draft, :published, :deleted]
+- `MyModel.all_published`: scope that will return all records with that state (and equivalents - for each states).
+- `MyModel.all_but_published`: scope that will return all records except the ones with that state (and equivalents for each states).
+- `my_model_instance.state`: it will return the current state, as a symbol, always.
+- `my_model_instance.published?`: boolean. Will tell you if current record has that state or not (and equivalents for each states).
 
 ## Contributing
 
