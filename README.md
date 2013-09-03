@@ -54,7 +54,8 @@ Etat will also generate a few more methods and scopes that will help you:
 
 ## TODO
 Here are a few things that could be useful, PRs are welcome!
-- default_state :draft
+- inject `Etat::ActiveRecord` into `ActiveRecord::Base` automatically instead of having to `include Etat::ActiveRecord` (planned)
+- default_state :draft (planned)
 - callbacks
 -- before_state :some_state, :do_whatever
 -- after_state :some_other_state, :do_whatever_else
