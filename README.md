@@ -23,15 +23,28 @@ And then execute:
 ```ruby
 class MyModel < ActiveRecord::Base
   has_states :draft, :published, :deleted
+  
+  # define an event. The name of the even has nothing to do with the names of states. It could be `event 'do_whatever_you_want' { puts 'OK!' } `
   event :publish do
     # some code to happen on publish...
     self.state = :publish
     self.save!
   end
 end
+
+
+instance = MyModel.new(state: :draft)
+instance.draft? # true
+instance.publish
+instance.draft? # false
+instance.published? # true
 ```
 
-Etat will generate a few methods and scopes that will help you:
+You can declare your states with `has_states` in your model. See the example above.
+
+You can also create events that can be called, manually. They are basically the same as creating methods right now. In the example above, `event :publish` will create an instance method called `publish`. That's it. This is just for code clarity; we know it is related to states. Again, just to be clear, it won't be called automatically.
+
+Etat will also generate a few more methods and scopes that will help you:
 
 - `MyModel.states` will give you an array of the states. # [:draft, :published, :deleted]
 - `MyModel.all_published`: scope that will return all records with that state (and equivalents - for each states).
