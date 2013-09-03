@@ -27,7 +27,7 @@ class MyModel < ActiveRecord::Base
   # define an event. The name of the even has nothing to do with the names of states. It could be `event 'do_whatever_you_want' { puts 'OK!' } `
   event :publish do
     # some code to happen on publish...
-    self.state = :publish
+    self.state = :published
     self.save!
   end
 end
@@ -51,6 +51,14 @@ Etat will also generate a few more methods and scopes that will help you:
 - `MyModel.all_but_published`: scope that will return all records except the ones with that state (and equivalents for each states).
 - `my_model_instance.state`: it will return the current state, as a symbol, always.
 - `my_model_instance.published?`: boolean. Will tell you if current record has that state or not (and equivalents for each states).
+
+## TODO
+Here are a few things that could be useful, PRs are welcome!
+- default_state :draft
+- callbacks
+-- before_state :some_state, :do_whatever
+-- after_state :some_other_state, :do_whatever_else
+-- around_state :yet_another_state, :lets_do_stuff
 
 ## Contributing
 
